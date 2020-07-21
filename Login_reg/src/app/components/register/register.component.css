@@ -1,0 +1,21 @@
+.error-color{
+  color: red
+}
+mat-radio-button{
+  padding: 10px
+}
+.uploadFile{
+  margin: 20px 0px;
+}
+
+input[type="file" i]{
+
+  background-color: royalblue;
+  color: white;
+}
+input#file-upload-button{
+
+  background-color: royalblue !important;
+  color: white !important;
+  border: 0px;
+}

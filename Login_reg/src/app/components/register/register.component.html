@@ -1,0 +1,68 @@
+<div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+  <mat-card class="box">
+    <mat-card-header>
+      <mat-card-title>Register</mat-card-title>
+    </mat-card-header>
+
+    <form class="example-form" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+      <mat-card-content>
+        <mat-form-field class="example-full-width" >
+          <input matInput placeholder="First Name" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted &amp;&amp; registerForm.controls.firstName.errors }" />
+          <div *ngIf="submitted &amp;&amp; registerForm.controls.firstName.errors" class="text-danger">
+              <div class="error-color" *ngIf="registerForm.controls.firstName.errors.required">First Name is required</div>
+          </div>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Last Name" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted &amp;&amp; registerForm.controls.lastName.errors }" />
+          <div  *ngIf="submitted &amp;&amp; registerForm.controls.lastName.errors" class="text-danger">
+              <div class="error-color" *ngIf="registerForm.controls.lastName.errors.required">Last Name is required</div>
+          </div>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Email" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted &amp;&amp; registerForm.controls.email.errors }" />
+          <div *ngIf="submitted &amp;&amp; registerForm.controls.email.errors" class="text-danger">
+              <div class="error-color" *ngIf="registerForm.controls.email.errors.required">Email is required</div>
+          </div>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Mobile Number" formControlName="mobile" class="form-control" [ngClass]="{ 'is-invalid': submitted &amp;&amp; registerForm.controls.mobile.errors }" />
+          <div *ngIf="submitted &amp;&amp; registerForm.controls.mobile.errors" class="text-danger">
+              <div class="error-color" *ngIf="registerForm.controls.mobile.errors.required">Mobile Number is required</div>
+          </div>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Address" formControlName="address" class="form-control" [ngClass]="{ 'is-invalid': submitted &amp;&amp; registerForm.controls.address.errors }" />
+          <div *ngIf="submitted &amp;&amp; registerForm.controls.address.errors" class="text-danger">
+              <div class="error-color" *ngIf="registerForm.controls.address.errors.required">Address is required</div>
+          </div>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted &amp;&amp; registerForm.controls.password.errors }" />
+          <div *ngIf="submitted &amp;&amp; registerForm.controls.password.errors" class="text-danger">
+              <div class="error-color" *ngIf="registerForm.controls.password.errors.required">Password is required</div>
+          </div>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Re-Enter Password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted &amp;&amp; registerForm.controls.password.errors }" />
+          <div *ngIf="submitted &amp;&amp; registerForm.controls.password.errors" class="text-danger">
+              <div class="error-color" *ngIf="registerForm.controls.password.errors.required">Re-Enter password is required</div>
+          </div>
+        </mat-form-field>
+
+          <mat-label>Choose a Gender...</mat-label><br>
+          <mat-radio-group aria-label="Select an option" [(value)]="selected">
+            <mat-radio-button [value]="roles"  *ngFor="let roles of Roles">{{roles}}</mat-radio-button>
+          </mat-radio-group>
+          <div class="uploadFile">
+            <mat-label>Choose a File</mat-label><br>
+            <input type="file" (change) = "fileUpload($event)"/>
+        </div>
+      </mat-card-content>
+
+      <button mat-stroked-button color="accent" class="btn-block">Register</button>
+
+    </form>
+  </mat-card>
+</div>
